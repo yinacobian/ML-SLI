@@ -7,11 +7,14 @@
 #1) Create a working directory: mkdir LILAC
 #2) Save this file in the folder LILAC
 #3) Create a folder for the raw reads, inside your main project folder: mkdir LILAC/P00_raw
+#	Use two zeros and not two "o" to create this folder 
 #4) Put all reads files, including R1 and R1 inside the folder LILAC/P00_raw
 #5) Create a list with the sample names and save it as IDS.txt, place it in the folder LILAC
 #	For exmaple do: ls /LILAC/P00_raw | cut -f 1,2,3 -d '_' | sort | uniq | wc -l > IDS.txt 
-#6) Open a screes session: screen -DR work-lilac
-#7) Run the command: bash viral-runall.sh IDS.txt /home/acobian/LILAC 40
+#	Or: ls P00_raw/ | cut -f 1,2,3 -d '_' | sort | uniq > IDS.txt
+#6) Open a screen session: screen -DR work-lilac
+#7) Go to your working directory (LILAC in this case) 
+#8) Run the command: bash viral-runall.sh IDS.txt /home/acobian/LILAC 40
 
 mkdir $2/P01_prinseq_output
 #1.- Quality filtering pair end : prinseq++
