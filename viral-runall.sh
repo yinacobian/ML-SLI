@@ -28,8 +28,13 @@ cat $1 | xargs -t -I{fileID} sh -c "cp $2/P01_prinseq_output/{fileID}_good_out_R
 
 # PART3: FRAP vs viral refseq
 mkdir $2/P03_FRAP_viralrefseq
+
 cp /home/SHARE/FRAP-bin/jmf4.pl $2/P03_FRAP_viralrefseq/ 
 cp /home/SHARE/FRAP-bin/frap_normalization.pl $2/P03_FRAP_viralrefseq/
-ls $2/P02_for_FRAP/ | cut -f '1' -d '.' > $2/P03_FRAP_viralrefseq/IDS.txt
 
-perl jmf4.pl 
+ls $2/P02_for_FRAP/ | cut -f '1' -d '.' | sort | uniq > $2/P03_FRAP_viralrefseq/IDS.txt
+
+cp /home/DATABASES/RefSeq/viral/all_viral_genomic.fna $2/P03_FRAP_viralrefseq
+
+
+perl jmf4.pl $2/P03_FRAP_viralrefseq/all_viral_genomic.fna 
