@@ -29,8 +29,8 @@ cat $1 | xargs -t -I{fileID} sh -c "cp $2/P01_prinseq_output/{fileID}_good_out_R
 # PART3: FRAP vs viral refseq
 mkdir $2/P03_FRAP_viralrefseq
 #copy FRAP scripts
-cp /home/SHARE/FRAP-bin/jmf4.pl $2/P03_FRAP_viralrefseq/ 
-cp /home/SHARE/FRAP-bin/frap_normalization.pl $2/P03_FRAP_viralrefseq/
+cp /home/SHARE/FRAP-bin/jmf4.pl $2/
+cp /home/SHARE/FRAP-bin/frap_normalization.pl $2/
 #copy database file
 cp /home/DATABASES/RefSeq/viral/all_viral_genomic.fna $2/P03_FRAP_viralrefseq
 #run FRAP
