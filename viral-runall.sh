@@ -36,5 +36,4 @@ ls $2/P02_for_FRAP/ | cut -f '1' -d '.' | sort | uniq > $2/P03_FRAP_viralrefseq/
 
 cp /home/DATABASES/RefSeq/viral/all_viral_genomic.fna $2/P03_FRAP_viralrefseq
 
-
-perl jmf4.pl $2/P03_FRAP_viralrefseq/all_viral_genomic.fna 
+perl jmf4.pl $2/P03_FRAP_viralrefseq/all_viral_genomic.fna $2/P02_for_FRAP $2/P03_FRAP_viralrefseq/results smalt 50000
