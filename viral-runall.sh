@@ -24,7 +24,7 @@
 
 # PART2: move reads to use in FRAP, good quality single end
 mkdir $2/P02_for_FRAP
-cat $1 | xargs -t -I{fileID} sh -c "cp $2/P01_prinseq_output/{fileID}_good_out_R1 $2/P02_for_FRAP/"
+cat $1 | xargs -t -I{fileID} sh -c "cp $2/P01_prinseq_output/{fileID}_good_out_R1.fasta $2/P02_for_FRAP/"
 
 # PART3: FRAP vs viral refseq
 mkdir $2/P03_FRAP_viralrefseq
